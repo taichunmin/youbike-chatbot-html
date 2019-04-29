@@ -8,8 +8,9 @@
 </head>
 <body>
   <script>
-    const isAndroid = () => navigator.userAgent.match(/Android/)
-    const isIOS = () => navigator.userAgent.match(/iPad/) || navigator.userAgent.match(/iPhone/) || navigator.userAgent.match(/iPod/)
+    const matchAgent = regexp => navigator.userAgent.match(regexp)
+    const isAndroid = () => matchAgent(/Android/)
+    const isIOS = () => matchAgent(/iPad/) || matchAgent(/iPhone/) || matchAgent(/iPod/)
     const getRedirectLink = () => {
       if (isAndroid()) return 'market://details?id=tw.com.sstc.youbike'
       if (isIOS()) return 'itms-apps://itunes.apple.com/tw/app/youbike%E5%BE%AE%E7%AC%91%E5%96%AE%E8%BB%8A/id639534082?mt=8'
