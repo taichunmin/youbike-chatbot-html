@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>YouBike App 下載</title>
+</head>
+<body>
+  <script>
+    const isAndroid = () => navigator.userAgent.match(/Android/)
+    const isIOS = () => navigator.userAgent.match(/iPad/) || navigator.userAgent.match(/iPhone/) || navigator.userAgent.match(/iPod/)
+    const getRedirectLink = () => {
+      if (isAndroid()) return 'market://details?id=tw.com.sstc.youbike'
+      if (isIOS()) return 'itms-apps://itunes.apple.com/tw/app/youbike%E5%BE%AE%E7%AC%91%E5%96%AE%E8%BB%8A/id639534082?mt=8'
+      return 'https://taipei.youbike.com.tw/download/app'
+    }
+    window.onload = function () {
+      location.href = getRedirectLink()
+    }
+  </script>
+</body>
+</html>
