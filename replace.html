@@ -17,6 +17,7 @@
       return 'https://taipei.youbike.com.tw/download/app'
     }
     window.onload = function () {
+      document.write(getRedirectLink())
       location.replace(getRedirectLink())
       //window.close()
     }
