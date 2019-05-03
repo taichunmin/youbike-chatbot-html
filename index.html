@@ -8,10 +8,16 @@
 </head>
 <body>
   <script>
-    const matchAgent = regexp => navigator.userAgent.match(regexp)
-    const isAndroid = () => matchAgent(/Android/i)
-    const isIOS = () => matchAgent(/iPhone/i) || matchAgent(/iPad/i) || matchAgent(/iPod/i)
-    const getRedirectLink = () => {
+    function matchAgent (regexp) {
+      return navigator.userAgent.match(regexp)
+    }
+    function isAndroid () {
+      return matchAgent(/Android/i)
+    }
+    function isIOS () {
+      return matchAgent(/iPhone/i) || matchAgent(/iPad/i) || matchAgent(/iPod/i)
+    }
+    function getRedirectLink () {
       if (isAndroid()) return 'market://details?id=tw.com.sstc.youbike'
       if (isIOS()) return 'itms-apps://itunes.apple.com/tw/app/youbike-wei-xiao-dan-che/id639534082?mt=8'
       return 'https://taipei.youbike.com.tw/download/app'
