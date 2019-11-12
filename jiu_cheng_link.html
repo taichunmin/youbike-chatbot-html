@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>揪騎 YouBike 巨城 Buy 一波</title>
+</head>
+<body>
+  <script>
+    var JIU_CHENG_LINK = {
+      '2019-11-28': ['http://lin.ee/2leKRYN', 'http://lin.ee/kBdEw9p', 'http://lin.ee/kBdEw9p'],
+      '2019-11-29': ['http://lin.ee/ya63M3z', 'http://lin.ee/3400fWr', 'http://lin.ee/tfhq1Fw'],
+      '2019-11-30': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
+      '2019-12-01': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
+      '2019-12-02': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
+      '2019-12-03': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
+      '2019-12-04': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
+      '2019-12-05': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
+      '2019-12-06': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
+      '2019-12-07': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
+      '2019-12-08': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
+      '2019-12-09': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
+    }
+    function match (str, re) {
+      var tmp = str.match(re)
+      return tmp ? tmp[1] : null
+    }
+    function getRedirectLink () {
+      var d = match(location.search, /d=(\d{4}-\d{2}-\d{2})/)
+      var n = parseInt(match(location.search, /n=(\d+)/), 10)
+      return (JIU_CHENG_LINK[d] || [])[n-1] || 'https://kadacha.work/le98s'
+    }
+    location.href = getRedirectLink()
+  </script>
+</body>
+</html>
