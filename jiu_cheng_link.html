@@ -8,19 +8,27 @@
 </head>
 <body>
   <script>
-    var JIU_CHENG_LINK = {
-      '2019-11-28': ['http://lin.ee/2leKRYN', 'http://lin.ee/kBdEw9p', 'http://lin.ee/kBdEw9p'],
-      '2019-11-29': ['http://lin.ee/ya63M3z', 'http://lin.ee/3400fWr', 'http://lin.ee/tfhq1Fw'],
-      '2019-11-30': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
-      '2019-12-01': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
-      '2019-12-02': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
-      '2019-12-03': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
-      '2019-12-04': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
-      '2019-12-05': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
-      '2019-12-06': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
-      '2019-12-07': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
-      '2019-12-08': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
-      '2019-12-09': ['http://lin.ee/3HIwwWx', 'http://lin.ee/uQTxIG8', 'http://lin.ee/zqrsBdd'],
+    var JIU_CHENG_LINEE = {
+      '2019-11-18': ['uvlEL1e', '1CctIb5', 'BN9qtWM'],
+      '2019-11-19': ['9fR7GEc', 'rXkyDN7', 'AGpMu1m'],
+      '2019-11-20': ['zrhJ2wI', '8fOIzX',  'rJjwSHO'],
+      '2019-11-21': ['rymuFQe', 'c86RDTG', 'kzZHo3I'],
+      '2019-11-22': ['BC7aznd', 'BC7aznd', 'gznkjnH'],
+      '2019-11-25': ['7JsI7x0', 'nfgyrx8', 'rmsMuTA'],
+      '2019-11-26': ['yNKmgst', 'kTeya9L', 'x1eB60y'],
+      '2019-11-27': ['1DfFnn' , 'oUyLTis', 'bBYiZHy'],
+      '2019-11-28': ['48QFz1T', 'khqIPQ7', 'pklIV2s'],
+      '2019-11-29': ['hvSC18N', 'sVZgasQ', 'q1Kn1ws'],
+      '2019-11-30': ['qwDAZ8d', '5C4DXqu', 'zqR8EE5'],
+      '2019-12-01': ['eYMf1Bq', 'aNPHAkz', 'zuRWdcf'],
+      '2019-12-02': ['rL6TQsI', 'jn9S0ic', 'qRcCqwJ'],
+      '2019-12-03': ['ClWjsCD', 'oS7Y2On', 'ieDmHJ2'],
+      '2019-12-04': ['7iIh10d', 'bLk7f8l', 'B1wI4V8'],
+      '2019-12-05': ['z2Souh8', '2zrLNj3', 'eEuSAlU'],
+      '2019-12-06': ['itI94xx', 'A0BcIN3', 'vfxJss7'],
+      '2019-12-07': ['wMuXJu2', '4MNOSHJ', 'nuq9cH7'],
+      '2019-12-08': ['1mA5toA', '7aj1Tju', '480uU65'],
+      '2019-12-09': ['oX0y97G', 'n4ezP5m', '1OLnDZZ'],
     }
     function match (str, re) {
       var tmp = str.match(re)
@@ -29,7 +37,8 @@
     function getRedirectLink () {
       var d = match(location.search, /d=(\d{4}-\d{2}-\d{2})/)
       var n = parseInt(match(location.search, /n=(\d+)/), 10)
-      return (JIU_CHENG_LINK[d] || [])[n-1] || 'https://kadacha.work/le98s'
+      var linee = (JIU_CHENG_LINEE[d] || [])[n-1]
+      return linee ? ('http://lin.ee/' + linee) : 'https://kadacha.work/le98s'
     }
     location.href = getRedirectLink()
   </script>
