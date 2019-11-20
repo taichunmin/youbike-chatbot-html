@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>揪騎 YouBike 巨城 Buy 一波</title>
+  <style>
+    a.close {
+      border-radius: .25rem;
+      border: 1px solid #28a745;
+      box-sizing: border-box;
+      color: #28a745;
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      padding: .375rem .75rem;
+      text-align: center;
+      text-transform: none;
+      user-select: none;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <a class="close" href="javascript:window.close()">點此關閉頁面</a>
+  <script>
+    var JIU_CHENG_LINEE = {
+      '2019-11-18': ['uvlEL1e', '1CctIb5', 'BN9qtWM'],
+      '2019-11-19': ['9fR7GEc', 'rXkyDN7', 'AGpMu1m'],
+      '2019-11-20': ['zrhJ2wI', '8fOIzX',  'rJjwSHO'],
+      '2019-11-21': ['rymuFQe', 'c86RDTG', 'kzZHo3I'],
+      '2019-11-22': ['BC7aznd', 'BC7aznd', 'gznkjnH'],
+      '2019-11-25': ['7JsI7x0', 'nfgyrx8', 'rmsMuTA'],
+      '2019-11-26': ['yNKmgst', 'kTeya9L', 'x1eB60y'],
+      '2019-11-27': ['1DfFnn' , 'oUyLTis', 'bBYiZHy'],
+      '2019-11-28': ['48QFz1T', 'khqIPQ7', 'pklIV2s'],
+      '2019-11-29': ['hvSC18N', 'sVZgasQ', 'q1Kn1ws'],
+      '2019-11-30': ['qwDAZ8d', '5C4DXqu', 'zqR8EE5'],
+      '2019-12-01': ['eYMf1Bq', 'aNPHAkz', 'zuRWdcf'],
+      '2019-12-02': ['rL6TQsI', 'jn9S0ic', 'qRcCqwJ'],
+      '2019-12-03': ['ClWjsCD', 'oS7Y2On', 'ieDmHJ2'],
+      '2019-12-04': ['7iIh10d', 'bLk7f8l', 'B1wI4V8'],
+      '2019-12-05': ['z2Souh8', '2zrLNj3', 'eEuSAlU'],
+      '2019-12-06': ['itI94xx', 'A0BcIN3', 'vfxJss7'],
+      '2019-12-07': ['wMuXJu2', '4MNOSHJ', 'nuq9cH7'],
+      '2019-12-08': ['1mA5toA', '7aj1Tju', '480uU65'],
+      '2019-12-09': ['oX0y97G', 'n4ezP5m', '1OLnDZZ'],
+    }
+    function match (str, re) {
+      var tmp = str.match(re)
+      return tmp ? tmp[1] : null
+    }
+    function getRedirectLink () {
+      var d = match(location.search, /d=(\d{4}-\d{2}-\d{2})/)
+      var n = parseInt(match(location.search, /n=(\d+)/), 10)
+      var linee = (JIU_CHENG_LINEE[d] || [])[n-1]
+      return linee ? ('http://lin.ee/' + linee) : 'https://kadacha.work/le98s'
+    }
+    location.href = getRedirectLink()
+  </script>
+</body>
+</html>
