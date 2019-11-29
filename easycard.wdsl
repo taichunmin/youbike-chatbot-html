@@ -1,0 +1,146 @@
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/">
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+<s:element name="HelloWorld">
+<s:complexType/>
+</s:element>
+<s:element name="HelloWorldResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="UBGetPhysicalId">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="mChkId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="mCardID" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="UBGetPhysicalIdResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="UBGetPhysicalIdResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="UBGetsurfaceId">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="mChkId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="mPCardID" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="UBGetsurfaceIdResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="UBGetsurfaceIdResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="HelloWorldSoapIn">
+<wsdl:part name="parameters" element="tns:HelloWorld"/>
+</wsdl:message>
+<wsdl:message name="HelloWorldSoapOut">
+<wsdl:part name="parameters" element="tns:HelloWorldResponse"/>
+</wsdl:message>
+<wsdl:message name="UBGetPhysicalIdSoapIn">
+<wsdl:part name="parameters" element="tns:UBGetPhysicalId"/>
+</wsdl:message>
+<wsdl:message name="UBGetPhysicalIdSoapOut">
+<wsdl:part name="parameters" element="tns:UBGetPhysicalIdResponse"/>
+</wsdl:message>
+<wsdl:message name="UBGetsurfaceIdSoapIn">
+<wsdl:part name="parameters" element="tns:UBGetsurfaceId"/>
+</wsdl:message>
+<wsdl:message name="UBGetsurfaceIdSoapOut">
+<wsdl:part name="parameters" element="tns:UBGetsurfaceIdResponse"/>
+</wsdl:message>
+<wsdl:portType name="UBWebServiceSoap">
+<wsdl:operation name="HelloWorld">
+<wsdl:input message="tns:HelloWorldSoapIn"/>
+<wsdl:output message="tns:HelloWorldSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="UBGetPhysicalId">
+<wsdl:input message="tns:UBGetPhysicalIdSoapIn"/>
+<wsdl:output message="tns:UBGetPhysicalIdSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="UBGetsurfaceId">
+<wsdl:input message="tns:UBGetsurfaceIdSoapIn"/>
+<wsdl:output message="tns:UBGetsurfaceIdSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="UBWebServiceSoap" type="tns:UBWebServiceSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="HelloWorld">
+<soap:operation soapAction="http://tempuri.org/HelloWorld" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="UBGetPhysicalId">
+<soap:operation soapAction="http://tempuri.org/UBGetPhysicalId" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="UBGetsurfaceId">
+<soap:operation soapAction="http://tempuri.org/UBGetsurfaceId" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="UBWebServiceSoap12" type="tns:UBWebServiceSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="HelloWorld">
+<soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="UBGetPhysicalId">
+<soap12:operation soapAction="http://tempuri.org/UBGetPhysicalId" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="UBGetsurfaceId">
+<soap12:operation soapAction="http://tempuri.org/UBGetsurfaceId" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="UBWebService">
+<wsdl:port name="UBWebServiceSoap" binding="tns:UBWebServiceSoap">
+<soap:address location="http://easycard.ovpn.taichunmin.idv.tw/UBwebservice.asmx"/>
+</wsdl:port>
+<wsdl:port name="UBWebServiceSoap12" binding="tns:UBWebServiceSoap12">
+<soap12:address location="http://easycard.ovpn.taichunmin.idv.tw/UBwebservice.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
