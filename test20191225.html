@@ -18,10 +18,11 @@
         liff.login({ redirectUri: location.href })
       }
     })()
-    (async () => {
+    const main = async () => {
       await loginPromise
       alert(`after init = ${location.href}`)
-    })()
+    }
+    main()
   </script>
 </body>
 </html>
