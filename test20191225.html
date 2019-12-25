@@ -10,7 +10,7 @@
   <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
     const loginPromise = (async () => {
-      console.log('location.href =', location.href)
+      alert(`before init = ${location.href}`)
       await liff.init({
         liffId: '1616993335-NrWl8wbj'
       })
@@ -18,12 +18,10 @@
         liff.login({ redirectUri: location.href })
       }
     })()
-    async function main () {
-      await loginPromise()
-      alert(location.href)
-      console.log(location.href)
-    }
-    main()
+    (async () => {
+      await loginPromise
+      alert(`after init = ${location.href}`)
+    })()
   </script>
 </body>
 </html>
