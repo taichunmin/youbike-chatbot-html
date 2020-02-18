@@ -8,7 +8,34 @@
 </head>
 <body>
   <script>
-    location.href = 'app://youbike'
+    <iframe src="app://youbike" frameborder="0" style="visibility: hidden"></iframe>
+    function matchAgent (regexp) {
+      return navigator.userAgent.match(regexp)
+    }
+    function isAndroid () {
+      return matchAgent(/Android/i)
+    }
+    function isIOS () {
+      return matchAgent(/iPhone/i) || matchAgent(/iPad/i) || matchAgent(/iPod/i)
+    }
+    window.onload = function () {
+      if (isAndroid()) {
+        location.href = 'intent://youbike/#Intent;scheme=app;package=tw.com.sstc.youbike;end'
+        return
+      }
+      if (isIOS()) {
+        var iframe = document.createElement('iframe')
+        iframe.src = 'app://youbike'
+        iframe.setAttribute('style', 'visibility: hidden')
+        document.body.appendChild(iframe)
+        setTimeout(() => {
+          if (document.webkitHidden || document.hidden) return
+          location.href = 'itms-apps://itunes.apple.com/tw/app/youbike-wei-xiao-dan-che/id639534082?mt=8'
+        }, 1000);
+        return
+      }
+      location.href = 'https://taipei.youbike.com.tw/download/app'
+    }
   </script>
 </body>
 </html>
