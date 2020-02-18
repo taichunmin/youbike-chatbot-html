@@ -7,26 +7,20 @@
   <title>YouBike App 下載</title>
 </head>
 <body>
-  <iframe src="app://youbike" frameborder="0" style="visibility: hidden"></iframe>
+  <script src="https://cdn.jsdelivr.net/npm/browser-deeplink@1/browser-deeplink.min.js"></script>
   <script>
-    function matchAgent (regexp) {
-      return navigator.userAgent.match(regexp)
+    deeplink.setup({
+      iOS: {
+        appName: "youbike-wei-xiao-dan-che",
+        appId: "639534082",
+      },
+      android: {
+        appId: "tw.com.sstc.youbike"
+      }
+    })
+    window.onload = function () {
+      deeplink.open('app://youbike')
     }
-    function isAndroid () {
-      return matchAgent(/Android/i)
-    }
-    function isIOS () {
-      return matchAgent(/iPhone/i) || matchAgent(/iPad/i) || matchAgent(/iPod/i)
-    }
-    function getRedirectLink () {
-      if (isAndroid()) return 'market://details?id=tw.com.sstc.youbike'
-      if (isIOS()) return 'itms-apps://itunes.apple.com/tw/app/youbike-wei-xiao-dan-che/id639534082?mt=8'
-      return 'https://taipei.youbike.com.tw/download/app'
-    }
-    setTimeout(function () {
-      if (document.webkitHidden || document.hidden) return
-      location.href = getRedirectLink()
-    }, 5000);
   </script>
 </body>
 </html>
