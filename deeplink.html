@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>YouBike App 下載</title>
+</head>
+<body>
+  <iframe src="app://youbike" frameborder="0" style="visibility: hidden"></iframe>
+  <script>
+    function matchAgent (regexp) {
+      return navigator.userAgent.match(regexp)
+    }
+    function isAndroid () {
+      return matchAgent(/Android/i)
+    }
+    function isIOS () {
+      return matchAgent(/iPhone/i) || matchAgent(/iPad/i) || matchAgent(/iPod/i)
+    }
+    function getRedirectLink () {
+      if (isAndroid()) return 'market://details?id=tw.com.sstc.youbike'
+      if (isIOS()) return 'itms-apps://itunes.apple.com/tw/app/youbike-wei-xiao-dan-che/id639534082?mt=8'
+      return 'https://taipei.youbike.com.tw/download/app'
+    }
+    setTimeout(function () {
+      if (document.webkitHidden || document.hidden) return
+      location.href = getRedirectLink()
+    }, 1000);
+  </script>
+</body>
+</html>
