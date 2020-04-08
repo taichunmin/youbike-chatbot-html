@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>YouBike 生有會</title>
+</head>
+<body>
+  <script>
+    var LINEES = {
+      '2020-04-20': 'rK9CeK0',
+      '2020-04-21': 'nu6LcMV',
+      '2020-04-22': 'tdHLksB',
+      '2020-04-23': 'kZpcLnP',
+      '2020-04-24': 'uT5t19U',
+      '2020-04-25': 'q5Y3yvY',
+      '2020-04-26': 'wu7OQ3b',
+      '2020-04-27': 'zD2casK',
+      '2020-04-28': '72ynn4w',
+      '2020-04-29': 'jLhCnav',
+      '2020-04-30': 'Cx0ZD7v',
+      '2020-05-01': 'c8Bh8fQ',
+      '2020-05-02': 'rxFGojV'
+    }
+    function match (str, re) {
+      var tmp = str.match(re)
+      return tmp ? tmp[1] : null
+    }
+    function getRedirectLink () {
+      var d = match(location.search, /d=(\d{4}-\d{2}-\d{2})/)
+      var linee = LINEES[d]
+      return linee ? ('https://lin.ee/' + linee) : 'https://kadacha.work/4IUdZ'
+    }
+    location.href = getRedirectLink()
+  </script>
+</body>
+</html>
