@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
+  <title>YouBike 微笑單車</title>
+</head>
+
+<style>
+  *,
+  *:before,
+  *:after {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, Arial, "PingFang TC", "Microsoft JhengHei", "微軟正黑", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    background-color: #ffc300;
+  }
+
+  h2 {
+    font-weight: bold
+  }
+
+  .img-hero {
+    width: 50%;
+    height: 50%;
+    max-width: 720px;
+    margin-top: 10px;
+  }
+
+  .button {
+    margin-top: 25px;
+    width: 85%;
+    height: 44px;
+    border-radius: 8px;
+    border: 2px solid #fff;
+    background: rgba(255, 255, 255, 0);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .button:hover,
+  .button:focus {
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    background: white;
+  }
+</style>
+
+<body>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164685281-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function isAndroid() {
+      return navigator.userAgent.match(/Android/i)
+    }
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-164685281-3');
+    gtag('event', '打開微笑單車LINE', {
+      event_category: '把捷徑加到主畫面',
+      event_label: isAndroid() ? 'android' : 'iOS',
+    })
+  </script>
+  <div class="d-flex flex-column align-items-center my-4">
+    <h2>Hi</h2>
+    <img src="https://gcs-youbike2-linebot.taichunmin.idv.tw/theme1/shortcut/hero-open.png?t=2020081111"
+      class="img-hero">
+    <a class="btn button" href="https://line.me/R/ti/p/@youbike">打開微笑單車 LINE</a>
+  </div>
+
+  <script>
+    function getRedirectLink() {
+      if (isAndroid()) return 'intent://ti/p/@youbike#Intent;scheme=line;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=jp.naver.line.android;end'
+      return 'https://line.me/R/ti/p/@youbike'
+    }
+    location.href = getRedirectLink()
+  </script>
+</body>
+
+</html>
