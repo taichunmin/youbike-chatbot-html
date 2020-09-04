@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta property="og:url" content="https://line.me/R/ti/p/%40youbike">
+  <title>加入 YouBike 微笑單車</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164685281-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-164685281-3');
+  </script>
+</head>
+<body>
+  <script>
+    window.onload = function () {
+      if (window.performance) {
+        gtag('event', 'timing_complete', {
+          'event_category' : '/join.html',
+          'name' : 'load',
+          'value' : Math.round(performance.now()),
+        })
+      }
+      location.href = 'https://line.me/R/ti/p/%40youbike'
+    }
+  </script>
+</body>
+</html>
